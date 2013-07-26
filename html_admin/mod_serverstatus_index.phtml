@@ -1,0 +1,27 @@
+{% extends request.ajax ? "layout_blank.phtml" : "layout_default.phtml" %}
+
+{% block meta_title %}{% trans 'Server`s status' %}{% endblock %}
+
+{% set active_menu = 'serverstatus' %}
+
+{% block content %}
+
+<div class="widget first">
+    <div class="head">
+        <h5>{% trans 'Server`s status' %}</h5>
+    </div>
+
+    <div class="help">
+        <h3>{% trans 'Moduł Statystyk Serwerów' %}</h3>
+    </div>
+
+     <table class="tableStatic wide">
+        <tbody>
+       FORMULARZ
+
+        </tbody>
+    </table>
+    
+</div>
+
+{% endblock %}
