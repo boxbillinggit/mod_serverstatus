@@ -63,7 +63,7 @@ class Box_Mod_ServerStatus_Controller_Admin
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 
-        throw new Box_Exception("Instalacja się nie udała", array(), 123);
+        //throw new Box_Exception("Instalacja się nie udała", array(), 123);
         return true;
     }
     
