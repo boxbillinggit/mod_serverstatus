@@ -56,10 +56,6 @@ class Box_Mod_ServerStatus_Controller_Admin
      */
     public function uninstall()
     {
-		$pdo = Box_Db::getPdo();
-        $query="DROP TABLE server_status";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
         return true;
     }
 

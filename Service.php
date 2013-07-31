@@ -31,8 +31,7 @@ class Box_Mod_ServerStatus_Service
 				) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-		
-        //throw new Box_Exception("Throw exception to terminate module installation process with a message", array(), 123);
+
         return true;
     }
     
@@ -44,7 +43,10 @@ class Box_Mod_ServerStatus_Service
      */
     public function uninstall()
     {
-        //throw new Box_Exception("Throw exception to terminate module uninstallation process with a message", array(), 124);
+        $pdo = Box_Db::getPdo();
+        $query="DROP TABLE server_status";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
         return true;
     }
     
@@ -63,18 +65,4 @@ class Box_Mod_ServerStatus_Service
         return true;
     }
     
- 	public function onAfterAdminActivateExtension() {
-		/*$pdo = Box_Db::getPdo();
-        $query="CREATE TABLE IF NOT EXISTS `server_status` (
-				  `id` int(11) NOT NULL,
-				  `name` varchar(255) NOT NULL,
-				  `host` varchar(255) NOT NULL,
-				  `www` int(11) NOT NULL DEFAULT '0',
-				  `mail` int(11) NOT NULL DEFAULT '0',
-				  `ftp` int(11) NOT NULL DEFAULT '0'
-				) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();*/
-	}
- 
 }
