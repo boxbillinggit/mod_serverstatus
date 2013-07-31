@@ -111,7 +111,7 @@ class Box_Mod_ServerStatus_Controller_Admin
     public function get_index(Box_App $app)
     {
        
-	    $results = '';
+	    $results = array();
 		return $app->render('mod_serverstatus_index', $results);
 
     }
