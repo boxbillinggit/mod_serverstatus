@@ -45,12 +45,7 @@ class Box_Mod_ServerStatus_Controller_Admin
      */
     public function install()
     {
-        // execute sql script if needed
-        $pdo = Box_Db::getPdo();
-        $query="SELECT NOW()";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-		
+				
 		$pdo = Box_Db::getPdo();
         $query="CREATE TABLE IF NOT EXISTS `server_status` (
 				  `id` int(11) NOT NULL,
