@@ -94,6 +94,7 @@ class Box_Mod_ServerStatus_Controller_Admin
     public function register(Box_App &$app)
     {
         $app->get('/serverstatus',             'get_index', array(), get_class($this));
+		$app->get('/serverstatus/add',         'get_index', array(), get_class($this));
     }
 		
 	public function __curl($url) {
@@ -113,6 +114,14 @@ class Box_Mod_ServerStatus_Controller_Admin
        
 	    $results = array();
 		return $app->render('mod_serverstatus_index', $results);
+
+    }
+	
+	public function get_add(Box_App $app)
+    {
+       
+	    $results = array();
+		return $app->render('mod_serverstatus_add', $results);
 
     }
 	
