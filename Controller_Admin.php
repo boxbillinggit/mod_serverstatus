@@ -45,21 +45,7 @@ class Box_Mod_ServerStatus_Controller_Admin
      */
     public function install()
     {
-			echo 'KURWA';	
-		$pdo = Box_Db::getPdo();
-        $query="CREATE TABLE IF NOT EXISTS `server_status` (
-				  `id` int(11) NOT NULL,
-				  `name` varchar(255) NOT NULL,
-				  `host` varchar(255) NOT NULL,
-				  `www` int(11) NOT NULL DEFAULT '0',
-				  `mail` int(11) NOT NULL DEFAULT '0',
-				  `ftp` int(11) NOT NULL DEFAULT '0'
-				) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-
-        //throw new Box_Exception("Instalacja się nie udała", array(), 123);
-        return false;
+		die();
     }
     
     /**
