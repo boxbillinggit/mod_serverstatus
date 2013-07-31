@@ -45,7 +45,7 @@ class Box_Mod_ServerStatus_Controller_Admin
      */
     public function install()
     {
-				
+			echo 'KURWA';	
 		$pdo = Box_Db::getPdo();
         $query="CREATE TABLE IF NOT EXISTS `server_status` (
 				  `id` int(11) NOT NULL,
@@ -59,7 +59,7 @@ class Box_Mod_ServerStatus_Controller_Admin
         $stmt->execute();
 
         //throw new Box_Exception("Instalacja się nie udała", array(), 123);
-        return true;
+        return false;
     }
     
     /**
