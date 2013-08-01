@@ -62,7 +62,11 @@ class Box_Mod_ServerStatus_Controller_Admin
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 		$toArray = $stmt->fetchAll();
-		print_r($toArray);
+		
+		
+		foreach($toArray as $key => $name) {
+			$results += array("test" => "aaaaaa");	
+		}
 		
        
 	    $results = array();
