@@ -6,61 +6,79 @@
 
 {% block content %}
 
-<div class="widget first">
-    <div class="head">
-        <h5>{% trans 'Server`s status' %}</h5>
-        <a href="admin/serverstatus/add" title="" class="btnIconLeft mr10 mt5 api-link"><img src="images/icons/dark/cog.png" alt="" class="icon"><span>Dodaj Serwer</span></a>
-    </div>
+<div class="widget simpleTabs">
 
-    <div class="help">
-        <h3>{% trans 'Moduł Statystyk Serwerów' %}</h3>
-    </div>
+<ul class="tabs">
+        <li class="activeTab"><a href="#tab-index">{% trans 'Server`s status' %}</a></li>
+        <li><a href="#tab-add">Dodaj Serwer</a></li>
+    </ul>
 
-     <table class="tableStatic wide">
+<div class="tabs_container">
+
+        <div class="fix"></div>
+        <div class="tab_content nopadding" id="tab-index" style="display: none;">
         
-        <thead>
-                    <tr>
-                        <td width="3%">&nbsp;</td>
-                        <td width="20%">Host</td>
-                        <td>WWW</td>
-                        <td>MAIL</td>
-                        <td>FTP</td>
-                        <td style="width: 21%;">Akcje</td>
-                    </tr>
-                </thead>
-                
-        <tbody>
-   {% for stat in host %}
-   
-   		<tr>
-                <td>{{stat['name']}}</td>
-   						<td width="20%">{{stat['host']}}</td>
-                        <td>
-                            {% if stat['www'] == 'ONLINE' %}
-     						<font color="green">ONLINE</font>
-                    		{% else %}
-                            <font color="red">OFFLINE</font>
-                    		{% endif %}
-                        </td>
-                        <td>
-                        	{% if stat['mail'] == 'ONLINE' %}
-     						<font color="green">ONLINE</font>
-                    		{% else %}
-                            <font color="red">OFFLINE</font>
-                    		{% endif %}
-                        </td>
-                        <td>
-                        	{% if stat['ftp'] == 'ONLINE' %}
-     						<font color="green">ONLINE</font>
-                    		{% else %}
-                            <font color="red">OFFLINE</font>
-                    		{% endif %}
-                        </td>
-                        <td style="width: 21%;">Akcje</td>
-   {% endfor %}
+        <div class="help">
+        <h3>{% trans 'Moduł Statystyk Serwerów' %}</h3>
+        <a href="admin/serverstatus/add" title="" class="btnIconLeft mr10 mt5 api-link" style="float:right;"><img src="images/icons/dark/cog.png" alt="" class="icon"><span>Dodaj Serwer</span></a>
+        </div>
 
-        </tbody>
-    </table>
+                 <table class="tableStatic wide">
+                    
+                    <thead>
+                                <tr>
+                                    <td width="3%">&nbsp;</td>
+                                    <td width="20%">Host</td>
+                                    <td>WWW</td>
+                                    <td>MAIL</td>
+                                    <td>FTP</td>
+                                    <td style="width: 21%;">Akcje</td>
+                                </tr>
+                            </thead>
+                            
+                    <tbody>
+               {% for stat in host %}
+               
+                    <tr>
+                            <td>{{stat['name']}}</td>
+                                    <td width="20%">{{stat['host']}}</td>
+                                    <td>
+                                        {% if stat['www'] == 'ONLINE' %}
+                                        <font color="green">ONLINE</font>
+                                        {% else %}
+                                        <font color="red">OFFLINE</font>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if stat['mail'] == 'ONLINE' %}
+                                        <font color="green">ONLINE</font>
+                                        {% else %}
+                                        <font color="red">OFFLINE</font>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if stat['ftp'] == 'ONLINE' %}
+                                        <font color="green">ONLINE</font>
+                                        {% else %}
+                                        <font color="red">OFFLINE</font>
+                                        {% endif %}
+                                    </td>
+                                    <td style="width: 21%;">Akcje</td>
+               {% endfor %}
+            
+                    </tbody>
+                </table>
+            
+            
+        </div>
+
+        <div class="tab_content nopadding" id="tab-add" style="display: none;">
+          </div>
+        
+        
+    </div>
+
+   
     
 </div>
 
