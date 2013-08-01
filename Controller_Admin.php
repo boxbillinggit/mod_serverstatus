@@ -55,6 +55,17 @@ class Box_Mod_ServerStatus_Controller_Admin
 		return $json;	
 	}
 	
+	function GetServerStatus($site, $port)
+	{
+		$status = array("OFFLINE", "ONLINE");
+		$fp = @fsockopen($site, $port, $errno, $errstr, 2);
+		if (!$fp) {
+			return $status[0];
+		} else { 
+			return $status[1];
+		}
+	}
+	
     public function get_index(Box_App $app)
     {
 		$pdo = Box_Db::getPdo();
@@ -68,9 +79,9 @@ class Box_Mod_ServerStatus_Controller_Admin
 		foreach($toArray as $key => $name) {
 			$results['host'][$name['host']]['name'] .= $name['name'];	
 			$results['host'][$name['host']]['host'] .= $name['host'];
-			$results['host'][$name['host']]['www'] .= $name['www'];
-			$results['host'][$name['host']]['mail'] .= $name['mail'];
-			$results['host'][$name['host']]['ftp'] .= $name['ftp'];
+			$results['host'][$name['host']]['www'] .= $this->GetServerStatus($name['host'],$name['www']);
+			$results['host'][$name['host']]['mail'] .= $this->GetServerStatus($name['host'],$name['mail']);
+			$results['host'][$name['host']]['ftp'] .= $this->GetServerStatus($name['host'],$name['ftp']);
 		}       
 	    
 		return $app->render('mod_serverstatus_index', $results);
