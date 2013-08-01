@@ -31,6 +31,16 @@ class Box_Mod_ServerStatus_Service
 				) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
+		
+		$pdo = Box_Db::getPdo();
+        $query="ALTER TABLE  `server_status` CHANGE  `id`  `id` INT( 11 ) NOT NULL AUTO_INCREMENT;";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+		
+		$pdo = Box_Db::getPdo();
+        $query="ALTER TABLE  `hosting_box`.`server_status` ADD PRIMARY KEY (  `id` );";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
 
         return true;
     }
