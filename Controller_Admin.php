@@ -71,9 +71,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 			$results['host'][$name['host']]['www'] .= $name['www'];
 			$results['host'][$name['host']]['mail'] .= $name['mail'];
 			$results['host'][$name['host']]['ftp'] .= $name['ftp'];
-		}
-		print_r($results);
-       
+		}       
 	    
 		return $app->render('mod_serverstatus_index', $results);
 
