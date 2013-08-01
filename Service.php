@@ -23,7 +23,7 @@ class Box_Mod_ServerStatus_Service
 		$pdo = Box_Db::getPdo();
         $query="CREATE TABLE IF NOT EXISTS `server_status` (
 				  `id` int(11) NOT NULL,
-				  `name` varchar(255) NOT NULL,
+				  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 				  `host` varchar(255) NOT NULL,
 				  `www` int(11) NOT NULL DEFAULT '0',
 				  `mail` int(11) NOT NULL DEFAULT '0',
