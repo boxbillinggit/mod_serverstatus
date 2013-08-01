@@ -66,7 +66,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 		$results = array();
 		
 		foreach($toArray as $key => $name) {
-			$results['host'] .= array($name['name'] => $name['name']);	
+			$results['host'][$key['name']] .= array($name['name'] => $name['name']);	
 		}
 		print_r($results);
        
