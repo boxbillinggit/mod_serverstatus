@@ -41,8 +41,20 @@
                             <font color="red">OFFLINE</font>
                     		{% endif %}
                         </td>
-                        <td>{{stat['mail']}}</td>
-                        <td>{{stat['ftp']}}</td>
+                        <td>
+                        	{% if stat['mail'] == 'ONLINE' %}
+     						<font color="green">ONLINE</font>
+                    		{% else %}
+                            <font color="red">OFFLINE</font>
+                    		{% endif %}
+                        </td>
+                        <td>
+                        	{% if stat['ftp'] == 'ONLINE' %}
+     						<font color="green">ONLINE</font>
+                    		{% else %}
+                            <font color="red">OFFLINE</font>
+                    		{% endif %}
+                        </td>
                         <td style="width: 21%;">Akcje</td>
    {% endfor %}
 
