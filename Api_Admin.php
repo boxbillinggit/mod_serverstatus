@@ -9,9 +9,7 @@ class Box_Mod_ServerStatus_Api_Admin extends Api_Abstract
 	public function add($data) {
 
 		$data = array();
-		
-		print_r($_POST);
-		
+				
 		$pdo = Box_Db::getPdo();
         $query="INSERT INTO  `hosting_box`.`server_status` (
 				`name` ,
