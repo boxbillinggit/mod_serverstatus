@@ -72,7 +72,36 @@
         </div>
 
         <div class="tab_content nopadding" id="tab-add" style="display: none;">
-          </div>
+        
+<form method="post" action="admin/serverstatus/add" class="mainForm api-form" data-api-msg="Dodano Serwer">
+    
+    <div class="help">
+        <h3>Dodaj Serwer</h3>
+        <p>Wystarczy Nazwa i Host</p>
+    </div>
+    
+    <fieldset>
+        <div class="rowElem">
+            <label>Nazwa Serwera</label>
+            <div class="formRight">
+                <input type="text" name="host_name" value="" placeholder="Nazwa Serwera">
+            </div>
+            <div class="fix"></div>
+        </div>
+
+		<div class="rowElem">
+            <label>Host Serwera</label>
+            <div class="formRight">
+                <input type="text" name="host_host" value="" placeholder="Host Serwera">
+            </div>
+            <div class="fix"></div>
+        </div>
+       
+        <input type="submit" value="Dodaj" class="greyishBtn submitForm">
+    </fieldset>
+</form>
+        
+        </div>
         
         
     </div>
