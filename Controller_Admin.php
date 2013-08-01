@@ -66,7 +66,11 @@ class Box_Mod_ServerStatus_Controller_Admin
 		$results = array();
 		
 		foreach($toArray as $key => $name) {
-			$results['host'][$name['host']] .= array($name['name'] => $name['name']);	
+			$results['host'][$name['host']]['name'] .= $name['name'];	
+			$results['host'][$name['host']]['host'] .= $name['host'];
+			$results['host'][$name['host']]['www'] .= $name['www'];
+			$results['host'][$name['host']]['mail'] .= $name['mail'];
+			$results['host'][$name['host']]['ftp'] .= $name['ftp'];
 		}
 		print_r($results);
        
