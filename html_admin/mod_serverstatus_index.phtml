@@ -29,7 +29,16 @@
                 </thead>
                 
         <tbody>
+   {% for stat in host %}
    
+   		<tr>
+                <td>{{stat['name']}}</td>
+   						<td width="20%">{{stat['host']}}</td>
+                        <td>WWW</td>
+                        <td>MAIL</td>
+                        <td>FTP</td>
+                        <td style="width: 21%;">Akcje</td>
+   {% endfor %}
 
         </tbody>
     </table>
