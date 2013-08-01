@@ -60,9 +60,9 @@ class Box_Mod_ServerStatus_Controller_Admin
 		$status = array("<font color='green';>OFFLINE</font>", "ONLINE");
 		$fp = @fsockopen($site, $port, $errno, $errstr, 2);
 		if (!$fp) {
-			return $status[0];
+			echo $status[0];
 		} else { 
-			return "<font color='green';>".$status[1]."</font>";
+			echo "<font color='green';>".$status[1]."</font>";
 		}
 	}
 	
