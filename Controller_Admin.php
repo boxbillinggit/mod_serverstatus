@@ -98,7 +98,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 	public function get_add(Box_App $app)
     {
        
-	    $results = array();
+	    $results = array("test");
 		return $app->render('mod_serverstatus_add', $results);
 
     }
