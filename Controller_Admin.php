@@ -63,12 +63,14 @@ class Box_Mod_ServerStatus_Controller_Admin
         $stmt->execute();
 		$toArray = $stmt->fetchAll();
 		
+		$results = array();
+		
 		foreach($toArray as $key => $name) {
-			$results['host'] += array($name['name'] => $name['name']);	
+			$results['host'] .= array($name['name'] => $name['name']);	
 		}
 		print_r($results);
        
-	    $results = array();
+	    
 		return $app->render('mod_serverstatus_index', $results);
 
     }
