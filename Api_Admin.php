@@ -24,7 +24,7 @@ class Box_Mod_ServerStatus_Api_Admin extends Api_Abstract
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 		
-		return $return;
+		return $_POST;
 
 	}
 	
