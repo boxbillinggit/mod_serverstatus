@@ -57,6 +57,13 @@ class Box_Mod_ServerStatus_Controller_Admin
 	
     public function get_index(Box_App $app)
     {
+		$pdo = Box_Db::getPdo();
+        $query="SELECT * FROM server_status";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+		$toArray = $stmt->fetchAll();
+		print_r($toArray);
+		
        
 	    $results = array();
 		return $app->render('mod_serverstatus_index', $results);
@@ -65,7 +72,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 	
 	public function get_add(Box_App $app)
     {
-       
+		
 	    $results = array("test");
 		return $app->render('mod_serverstatus_add', $results);
 
