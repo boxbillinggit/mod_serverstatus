@@ -57,12 +57,12 @@ class Box_Mod_ServerStatus_Controller_Admin
 	
 	function GetServerStatus($site, $port)
 	{
-		$status = array("<font color='green';>OFFLINE</font>", "ONLINE");
+		$status = array("OFFLINE", "ONLINE");
 		$fp = @fsockopen($site, $port, $errno, $errstr, 2);
 		if (!$fp) {
-			echo $status[0];
+			return $status[0];
 		} else { 
-			echo "<font color='green';>".$status[1]."</font>";
+			return $status[1];
 		}
 	}
 	
@@ -77,11 +77,15 @@ class Box_Mod_ServerStatus_Controller_Admin
 		$results = array();
 		
 		foreach($toArray as $key => $name) {
+			if($this->GetServerStatus($name['host'],$name['www']) == 'ONLINE') { $www = '<font color="green">ONLINE</font>'; } else { $www = '<font color="red">OFFLINE</font>'; }
+			if($this->GetServerStatus($name['host'],$name['mail']) == 'ONLINE') { $mail = '<font color="green">ONLINE</font>'; } else { $www = '<font color="red">OFFLINE</font>'; }
+			if($this->GetServerStatus($name['host'],$name['ftp']) == 'ONLINE') { $ftp = '<font color="green">ONLINE</font>'; } else { $www = '<font color="red">OFFLINE</font>'; }
+			
 			$results['host'][$name['host']]['name'] .= $name['name'];	
 			$results['host'][$name['host']]['host'] .= $name['host'];
-			$results['host'][$name['host']]['www'] .= $this->GetServerStatus($name['host'],$name['www']);
-			$results['host'][$name['host']]['mail'] .= $this->GetServerStatus($name['host'],$name['mail']);
-			$results['host'][$name['host']]['ftp'] .= $this->GetServerStatus($name['host'],$name['ftp']);
+			$results['host'][$name['host']]['www'] .= $www;
+			$results['host'][$name['host']]['mail'] .= $mail;
+			$results['host'][$name['host']]['ftp'] .= $ftp;
 		}       
 	    
 		return $app->render('mod_serverstatus_index', $results);
