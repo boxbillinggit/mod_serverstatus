@@ -12,12 +12,21 @@ class Box_Mod_ServerStatus_Api_Admin extends Api_Abstract
 		
 		print_r($_POST);
 		
-		/*$pdo = Box_Db::getPdo();
-        $query="UPDATE `extension_meta` SET `meta_value`='{$return}' WHERE extension='mod_autoticket'";
+		$pdo = Box_Db::getPdo();
+        $query="INSERT INTO  `hosting_box`.`server_status` (
+				`name` ,
+				`host` ,
+				`www` ,
+				`mail` ,
+				`ftp`
+				)
+				VALUES (
+				'".$_POST['host_name']."',  '".$_POST['host_host']."',  '80',  '25',  '21'
+				)";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 		
-		return $return;*/
+		return $return;
 
 	}
 	
