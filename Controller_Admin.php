@@ -57,7 +57,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 	
 	function GetServerStatus($site, $port)
 	{
-		$status = array("OFFLINE", "ONLINE");
+		$status = array("<font color='green';>OFFLINE</font>", "<font color='green';>ONLINE</font>");
 		$fp = @fsockopen($site, $port, $errno, $errstr, 2);
 		if (!$fp) {
 			return $status[0];
