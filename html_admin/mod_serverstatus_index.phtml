@@ -34,7 +34,13 @@
    		<tr>
                 <td>{{stat['name']}}</td>
    						<td width="20%">{{stat['host']}}</td>
-                        <td>{{stat['www']}}</td>
+                        <td>
+                            {% if stat['www'] == 'ONLINE' %}
+     						<font color="green">ONLINE</font>
+                    		{% else %}
+                            <font color="red">OFFLINE</font>
+                    		{% endif %}
+                        </td>
                         <td>{{stat['mail']}}</td>
                         <td>{{stat['ftp']}}</td>
                         <td style="width: 21%;">Akcje</td>
