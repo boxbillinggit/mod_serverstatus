@@ -62,7 +62,8 @@
                                         <font color="red">OFFLINE</font>
                                         {% endif %}
                                     </td>
-                                    <td style="width: 21%;">Akcje</td>
+                                    <td style="width: 21%;">
+                                    <a class="api-link bb-button btn14" href="admin/serverstatus/remove?id={{stat['id']}}" data-api-confirm="Jesteś pewien?" data-api-reload="Server skasowany" title="Usuń"><img src="images/icons/dark/close.png" alt="" class="icon"></a></td>
                {% endfor %}
             
                     </tbody>

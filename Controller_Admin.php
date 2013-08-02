@@ -77,6 +77,7 @@ class Box_Mod_ServerStatus_Controller_Admin
 		$results = array();
 		
 		foreach($toArray as $key => $name) {
+			$results['host'][$name['host']]['id'] .= $name['id'];
 			$results['host'][$name['host']]['name'] .= $name['name'];	
 			$results['host'][$name['host']]['host'] .= $name['host'];
 			$results['host'][$name['host']]['www'] .= $this->GetServerStatus($name['host'],$name['www']);
