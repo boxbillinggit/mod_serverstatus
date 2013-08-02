@@ -28,4 +28,8 @@ class Box_Mod_ServerStatus_Api_Admin extends Api_Abstract
 
 	}
 	
+	public function remove($data) {
+	print_r($data);	
+	}
+	
 }
