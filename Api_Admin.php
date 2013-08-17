@@ -11,7 +11,7 @@ class Box_Mod_ServerStatus_Api_Admin extends Api_Abstract
 		$data = array();
 				
 		$pdo = Box_Db::getPdo();
-        $query="INSERT INTO  `hosting_box`.`server_status` (
+        $query="INSERT INTO  `server_status` (
 				`name` ,
 				`host` ,
 				`www` ,
