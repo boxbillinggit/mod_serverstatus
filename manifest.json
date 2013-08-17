@@ -2,11 +2,11 @@
     "id":           "serverstatus",
 	"type":         "mod",
     "name":         "Server Status",
-    "description":  "Moduł statatystyk serwerów.",
+    "description":  "Statistics module servers.",
     "icon_url":     "icon.png",
     "homepage_url": "http://www.boxbilling.com.pl/",
     "author":       "Zaba",
     "author_url":   "http://boxbilling.com.pl",
     "license":      "GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
-    "version":      "1.0.0"
+    "version":      "1.0.1"
 }
