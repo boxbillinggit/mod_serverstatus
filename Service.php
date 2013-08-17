@@ -38,7 +38,7 @@ class Box_Mod_ServerStatus_Service
         $stmt->execute();
 		
 		$pdo = Box_Db::getPdo();
-        $query="ALTER TABLE  `hosting_box`.`server_status` ADD PRIMARY KEY (  `id` );";
+        $query="ALTER TABLE `server_status` ADD PRIMARY KEY (  `id` );";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 
